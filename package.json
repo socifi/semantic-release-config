@@ -1,0 +1,31 @@
+{
+  "name": "@socifi/semantic-release-config",
+  "version": "0.1.0",
+  "description": "Shareable config for semantic release",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/socifi/semantic-release-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/socifi/semantic-release-config/issues"
+  },
+  "homepage": "https://github.com/socifi/semantic-release-config",
+  "author": "Michal Ozogán <michal@socifi.com>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "semantic-release",
+    "semantic-release-config"
+  ],
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@semantic-release/git": "^4.0.1",
+    "luxon": "^1.0.0",
+    "semantic-release": "^15.1.7"
+  },
+  "devDependencies": {
+    "@socifi/eslint-config": "^1.7.1"
+  }
+}
