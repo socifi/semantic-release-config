@@ -5,6 +5,13 @@ module.exports = (settings, { commits, nextRelease }) => {
 
     commits.map((commit) => {
         const [type, ...message] = commit.message.split(':');
+        if (message.length === 0) {
+            return {
+                type: 'Other',
+                message: commit.message,
+            };
+        }
+
         return {
             type: type.trim(),
             message: message.join(':').trim(),
