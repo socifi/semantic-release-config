@@ -18,7 +18,7 @@
     "semantic-release-config"
   ],
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "@semantic-release/git": "^4.0.1",
