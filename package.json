@@ -18,7 +18,8 @@
     "semantic-release-config"
   ],
   "scripts": {
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "release": "semantic-release --extends ./src/index.js --dry-run"
   },
   "dependencies": {
     "@semantic-release/git": "^4.0.1",
