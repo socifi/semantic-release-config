@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] 2018-04-19
+### Changed
+- [RND-6](https://socifi.atlassian.net/browse/RND-6) Import types from commitlint config
+
 ## [0.3.0] 2018-04-18
 ### Changed
 - Commit with unspecified format will be in Other section
