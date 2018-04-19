@@ -22,6 +22,10 @@ module.exports = {
             message: 'Commit changelog of version ${nextRelease.version}\n\n${nextRelease.notes}',
         },
     ],
+    success: [
+        './push-to-slack.js',
+        '@semantic-release/github',
+    ],
     analyzeCommits: {
         releaseRules: [
             { type: CHANGED, release: 'minor' },
