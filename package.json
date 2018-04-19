@@ -18,7 +18,7 @@
     "semantic-release-config"
   ],
   "scripts": {
-    "lint": "eslint ./src",
+    "lint": "eslint ./src ./tests",
     "test": "jest",
     "release": "semantic-release --extends ./src/index.js",
     "commitmsg": "commitlint -e $GIT_PARAMS"
