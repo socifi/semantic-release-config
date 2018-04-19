@@ -22,9 +22,9 @@ module.exports = async (
                         .filter((value, key) => key !== 0)
                         .join('\n')
                         .replace(/- /g, '')
-                        .replace(/\((([a-zA-Z]|[0-9]|:|\/|\.|-)*)\)/g, '')
-                        .replace(/\[([A-Z]{2,3}-[0-9]*)\]/g, '$1')
-                        .replace(/([A-Z]{2,3}-[0-9]*)/g, '<https://socifi.atlassian.net/browse/$1|$1>'),
+                        .replace(/\(((\w|:|\/|\.|-)*)\)/g, '')
+                        .replace(/\[([A-Z]{2,3}-\d*)\]/g, '$1')
+                        .replace(/([A-Z]{2,3}-\d*)/g, '<https://socifi.atlassian.net/browse/$1|$1>'),
                 };
             }),
     };
