@@ -1,8 +1,14 @@
 const { DateTime } = require('luxon');
+const {
+    TEST,
+    IN_PROGRESS,
+} = require('@socifi/commitlint-config/src/types');
+
 
 module.exports = (settings, { commits, nextRelease }) => {
     const changes = {};
 
+    // convert commit messages to universal format
     commits.map((commit) => {
         const [type, ...message] = commit.message.split(':');
         if (message.length === 0) {
@@ -16,18 +22,24 @@ module.exports = (settings, { commits, nextRelease }) => {
             type: type.trim(),
             message: message.join(':').trim(),
         };
-    }).forEach(({ type, message }) => {
-        changes[type] = [
-            ...(changes[type] || []),
-            message,
-        ];
-    });
+    })
+        // remove all commits that should not be in changelog
+        .filter(item => ![TEST, IN_PROGRESS].includes(item.type))
+        // put commits to object with summed messages by types
+        .forEach(({ type, message }) => {
+            changes[type] = [
+                ...(changes[type] || []),
+                message,
+            ];
+        });
 
+    // generate changelog messages
     const changesMessage = Object.keys(changes).map((key) => {
         return `### ${key}\n${changes[key].map((message) => {
             return `- ${message.replace(/([A-Z]{2,3}-\d*)/g, '[$1](https://socifi.atlassian.net/browse/$1)')}`;
         }).join('\n')}\n`;
     }).join('\n');
 
+    // return update of changelog
     return `## [${nextRelease.version}] ${DateTime.local().toFormat('yyyy-MM-dd')}\n${changesMessage}`;
 };

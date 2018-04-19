@@ -1,31 +1,44 @@
 version: 2
 jobs:
-  build:
+  install:
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
       - run: sudo npm install -g npm@latest
       - run: npm ci
-      - run: npm run lint
-      - run: npm run test
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  tests:
+      docker:
+        - image: circleci/node:latest
+      steps:
+        - checkout
+        - attach_workspace:
+            at: .
+        - run: npm run lint
+        - run: npm run test
   release:
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: sudo npm install -g npm@latest
-      - run: npm ci
-      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - attach_workspace:
+          at: .
       - run: npm run release
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - install
+      - tests:
+          requires:
+            - install
       - release:
           requires:
-            - build
+            - tests
           filters:
             branches:
               only: master

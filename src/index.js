@@ -1,8 +1,20 @@
+const {
+    CHANGED,
+    FIXED,
+    REMOVED,
+    ADDED,
+    DEPRECIATED,
+    DOCS,
+} = require('@socifi/commitlint-config/src/types');
+
 module.exports = {
     generateNotes: './generate-notes.js',
     prepare: [
+        // update changelog file
         './update-changelog.js',
+        // set version to npm files
         '@semantic-release/npm',
+        // commit changed files and push them to GitHub
         {
             path: '@semantic-release/git',
             assets: ['package.json', 'package-lock.json', 'CHANGELOG.md'],
@@ -12,12 +24,12 @@ module.exports = {
     ],
     analyzeCommits: {
         releaseRules: [
-            { type: 'Changed', release: 'minor' },
-            { type: 'Fixed', release: 'patch' },
-            { type: 'Removed', release: 'major' },
-            { type: 'Added', release: 'minor' },
-            { type: 'Depreciated', release: 'minor' },
-            { type: 'Docs', release: 'patch' },
+            { type: CHANGED, release: 'minor' },
+            { type: FIXED, release: 'patch' },
+            { type: REMOVED, release: 'major' },
+            { type: ADDED, release: 'minor' },
+            { type: DEPRECIATED, release: 'minor' },
+            { type: DOCS, release: 'patch' },
         ],
     },
 };
