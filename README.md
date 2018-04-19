@@ -35,6 +35,7 @@ Each deployment have following stages:
 - **Create Git tag**
 - **Prepare** - Update changelog, update npm version, commit changed files and push it to GitHub.
 - **Publish** - Publish npm version and release GitHub tag.
+- **Success** - Notify about new version in Slack
 
 ## Variables on CI
 
@@ -44,3 +45,4 @@ Following variables must be set in CI:
 - GIT_USERNAME
 - GIT_EMAIL
 - NPM_TOKEN
+- SLACK_WEBHOOK
