@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] 2018-04-23
+### Changed
+- [RND-9](https://socifi.atlassian.net/browse/RND-9) Use context in circleci
+
 ## [0.5.0] 2018-04-19
 ### Added
 - [RND-8](https://socifi.atlassian.net/browse/RND-8) Push info about new versions to Slack
