@@ -33,13 +33,13 @@ workflows:
   build_and_test:
     jobs:
       - install:
-          context: npm
+          context: NPM
       - tests:
-          context: npm
+          context: NPM
           requires:
             - install
       - release:
-          context: npm
+          context: NPM
           requires:
             - tests
           filters:
