@@ -29,7 +29,7 @@ module.exports = async (
             }),
     };
 
-    await fetch(`https://hooks.slack.com/services/${process.env.SLACK_WEBHOOK}`, {
+    await fetch(`https://hooks.slack.com/services/${process.env.SLACK_DEPLOY_WEBHOOK}`, {
         method: 'POST',
         body: JSON.stringify({ attachments: [attachement] }),
     });
