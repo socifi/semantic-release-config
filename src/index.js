@@ -1,12 +1,3 @@
-const {
-    CHANGED,
-    FIXED,
-    REMOVED,
-    ADDED,
-    DEPRECIATED,
-    DOCS,
-} = require('@socifi/commitlint-config/src/types');
-
 module.exports = {
     generateNotes: './generate-notes.js',
     prepare: [
@@ -26,14 +17,6 @@ module.exports = {
         './push-to-slack.js',
         '@semantic-release/github',
     ],
-    analyzeCommits: {
-        releaseRules: [
-            { type: CHANGED, release: 'minor' },
-            { type: FIXED, release: 'patch' },
-            { type: REMOVED, release: 'major' },
-            { type: ADDED, release: 'minor' },
-            { type: DEPRECIATED, release: 'minor' },
-            { type: DOCS, release: 'patch' },
-        ],
-    },
+    verifyConditions: [],
+    analyzeCommits: './analyze-commits.js',
 };

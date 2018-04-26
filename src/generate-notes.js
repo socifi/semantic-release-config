@@ -29,7 +29,7 @@ module.exports = (settings, { commits, nextRelease }) => {
         .forEach(({ type, message }) => {
             changes[type] = [
                 ...(changes[type] || []),
-                message,
+                message.replace('[NO_RELEASE]', ''),
             ];
         });
 

@@ -15,6 +15,13 @@ describe('Test generation of changelog', () => {
         })).toEqual(`## [v1.0.0] ${now}\n### Changed\n- Everything.\n`);
     });
 
+    it('remove [NO_RELEASE] from changelog', () => {
+        expect(generateNotes(undefined, {
+            commits: [{ message: 'Changed: Everything [NO_RELEASE]' }],
+            nextRelease: { version: 'v1.0.0' },
+        })).toEqual(`## [v1.0.0] ${now}\n### Changed\n- Everything \n`);
+    });
+
     it('skip Test and InProgress in changelog', () => {
         expect(generateNotes(undefined, {
             commits: [{ message: 'Added: Everything.' }, { message: 'Test: Everything.' }, { message: 'InProgress: Everything.' }],
