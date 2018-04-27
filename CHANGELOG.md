@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] 2018-04-27
+### Fixed
+- [RND-13](https://socifi.atlassian.net/browse/RND-13) Formating of code
+
+### Added
+- [RND-13](https://socifi.atlassian.net/browse/RND-13) Add option to not re-le-a-se commit
+
 ## [0.7.0] 2018-04-23
 ### Changed
 - [RND-7](https://socifi.atlassian.net/browse/RND-7) Use docker with latest npm for testing
