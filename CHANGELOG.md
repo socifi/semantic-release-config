@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.8.1] 2018-04-27
+### Fixed
+- [RND-13](https://socifi.atlassian.net/browse/RND-13) Don't crash when there are no commits to analyze
+
 ## [0.8.0] 2018-04-27
 ### Fixed
 - [RND-13](https://socifi.atlassian.net/browse/RND-13) Formating of code
