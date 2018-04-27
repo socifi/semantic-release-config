@@ -9,9 +9,14 @@ const {
 } = require('@socifi/commitlint-config/src/types');
 
 module.exports = (settings, { commits, logger }) => {
+    if (commits.length === 0) {
+        return null;
+    }
+
     if (commits[0].subject.indexOf('[NO_RELEASE]') >= 0) {
         return null;
     }
+
     return commitAnalyzer({
         releaseRules: [
             { type: CHANGED, release: 'minor' },
