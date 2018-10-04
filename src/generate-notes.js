@@ -25,11 +25,12 @@ module.exports = (settings, { commits, nextRelease }) => {
     })
         // remove all commits that should not be in changelog
         .filter(item => ![TEST, IN_PROGRESS].includes(item.type))
+        .filter(item => !item.type.includes('Merge branch'))
         // put commits to object with summed messages by types
         .forEach(({ type, message }) => {
             changes[type] = [
                 ...(changes[type] || []),
-                message.replace('[NO_RELEASE]', ''),
+                message.replace('NO_RELEASE', ''),
             ];
         });
 

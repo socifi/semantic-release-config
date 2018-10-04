@@ -37,7 +37,7 @@ Each deployment have following stages:
 - **Publish** - Publish npm version and release GitHub tag.
 - **Success** - Notify about new version in Slack
 
-If you don't want to release commit in master, just add [NO_RELEASE] to commit message.
+If you don't want to release commit in master, just add NO_RELEASE to commit message. For new major version add BREAKING to commit message.
 
 ## Variables on CI
 
