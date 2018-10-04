@@ -10,14 +10,20 @@ const {
 } = require('@socifi/commitlint-config/src/types');
 
 module.exports = (settings, { commits, logger }) => {
+    // do no release anything of there are not commits
     if (commits.length === 0) {
         return null;
     }
 
-    if (commits[0].subject.indexOf('[NO_RELEASE]') >= 0) {
+    // if last commit is set as NO_RELEASE, do not release
+    if (commits[0].subject.indexOf('NO_RELEASE') >= 0) {
         return null;
     }
 
+    // if there is work BREAKING in any commits, make major release
+    if (commits.some(commit => commit.subject.includes('BREAKING'))) {
+        return 'major';
+    }
 
     return commitAnalyzer({
         releaseRules: [
@@ -29,10 +35,5 @@ module.exports = (settings, { commits, logger }) => {
             { type: REFACTORED, release: 'minor' },
             { type: DOCS, release: 'patch' },
         ],
-        parserOpts: {
-            noteKeywords: [
-                'BREAKING',
-            ],
-        },
     }, { commits, logger });
 };
