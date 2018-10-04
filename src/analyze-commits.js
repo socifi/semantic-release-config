@@ -18,6 +18,7 @@ module.exports = (settings, { commits, logger }) => {
         return null;
     }
 
+
     return commitAnalyzer({
         releaseRules: [
             { type: CHANGED, release: 'minor' },
