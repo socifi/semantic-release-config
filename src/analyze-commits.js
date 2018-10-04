@@ -6,6 +6,7 @@ const {
     ADDED,
     DEPRECIATED,
     DOCS,
+    REFACTORED,
 } = require('@socifi/commitlint-config/src/types');
 
 module.exports = (settings, { commits, logger }) => {
@@ -24,7 +25,13 @@ module.exports = (settings, { commits, logger }) => {
             { type: REMOVED, release: 'major' },
             { type: ADDED, release: 'minor' },
             { type: DEPRECIATED, release: 'minor' },
+            { type: REFACTORED, release: 'minor' },
             { type: DOCS, release: 'patch' },
         ],
+        parserOpts: {
+            noteKeywords: [
+                'BREAKING',
+            ],
+        },
     }, { commits, logger });
 };
