@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] 2018-10-25
+### Fixed
+- Different name of export from commit analyzer
+
 ## [1.0.0] 2018-10-25
 ### Changed
 - Make ready for production version BREAKING

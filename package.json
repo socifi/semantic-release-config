@@ -1,6 +1,6 @@
 {
   "name": "@socifi/semantic-release-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shareable config for semantic release",
   "main": "src/index.js",
   "repository": {
