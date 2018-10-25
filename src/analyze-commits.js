@@ -1,4 +1,4 @@
-const { commitAnalyzer } = require('@semantic-release/commit-analyzer');
+const { analyzeCommits } = require('@semantic-release/commit-analyzer');
 const {
     CHANGED,
     FIXED,
@@ -25,7 +25,7 @@ module.exports = (settings, { commits, logger }) => {
         return 'major';
     }
 
-    return commitAnalyzer({
+    return analyzeCommits({
         releaseRules: [
             { type: CHANGED, release: 'minor' },
             { type: FIXED, release: 'patch' },
