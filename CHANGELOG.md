@@ -1,6 +1,21 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] 2018-10-25
+### Merge remote-tracking branch 'origin/master' into issue/RND-16
+
+# Conflicts
+- #	package-lock.json
+#	package.json
+
+### Changed
+- Make ready for production version BREAKING
+- [RND-16](https://socifi.atlassian.net/browse/RND-16) Some BREAKING changes.
+- [RND-16](https://socifi.atlassian.net/browse/RND-16) Update packages
+
+### Added
+- [RND-16](https://socifi.atlassian.net/browse/RND-16) B-R-E-A-K-I-N-G can be used for release of new major version (without -)
+
 ## [0.9.0] 2018-10-04
 ### Added
 - [RND-16](https://socifi.atlassian.net/browse/RND-16) B-R-E-A-K-I-N-G can be used for release of new major version (without -)
