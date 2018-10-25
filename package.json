@@ -23,15 +23,15 @@
     "release": "semantic-release --extends ./src/index.js"
   },
   "dependencies": {
-    "@semantic-release/commit-analyzer": "^6.0.1",
-    "@semantic-release/git": "^7.0.4",
-    "@socifi/commitlint-config": "^0.9.0",
-    "luxon": "^1.4.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.5",
+    "@socifi/commitlint-config": "^1.0.0",
+    "luxon": "^1.4.4",
     "node-fetch": "^2.2.0",
-    "semantic-release": "^15.9.17"
+    "semantic-release": "^15.10.5"
   },
   "devDependencies": {
-    "@socifi/eslint-config": "^1.10.0",
+    "@socifi/eslint-config": "^2.0.0",
     "jest": "^23.6.0"
   }
 }

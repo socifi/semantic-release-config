@@ -3,3 +3,4 @@ tests
 commitlint.config.js
 .circleci
 .idea
+.huskyrc.js

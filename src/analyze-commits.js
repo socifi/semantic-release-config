@@ -1,4 +1,4 @@
-const commitAnalyzer = require('@semantic-release/commit-analyzer');
+const { commitAnalyzer } = require('@semantic-release/commit-analyzer');
 const {
     CHANGED,
     FIXED,
